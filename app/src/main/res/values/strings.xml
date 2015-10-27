@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Keugasto</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- Main Drawer -->
+    <string name="main_drawer_add_category">Adicionar Categoria</string>
+</resources>
