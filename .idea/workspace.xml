@@ -22,18 +22,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54595e29-b3a0-464e-ac5b-50d8cfffdc9f" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\rborcat\workspace\upversion\keugasto-android\app\.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rborcat\workspace\upversion\keugasto-android\app\src\androidTest\java\com\upversionlab\keugasto\ApplicationTest.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rborcat\workspace\upversion\keugasto-android\app\src\test\java\com\upversionlab\keugasto\ExampleUnitTest.java" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\rborcat\workspace\upversion\keugasto-android\app\src\main\java\com\upversionlab\keugasto\MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/MainScreen/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
+      <change type="MOVED" beforePath="C:\Users\rborcat\workspace\upversion\keugasto-android\app\src\main\java\com\upversionlab\keugasto\MainScreen\MyAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/MainScreen/ExpenseAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/MainScreen/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/MainScreen/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Keugasto.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -61,31 +53,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/MainScreen/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8315972">
-              <caret line="32" column="66" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="66" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="35" column="56" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2488#2519#0" expanded="true" />
-                <element signature="e#2521#2553#0" expanded="true" />
+                <element signature="e#2474#2505#0" expanded="true" />
+                <element signature="e#2507#2539#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/MainScreen/MyAdapter.java">
+      <file leaf-file-name="ExpenseAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/MainScreen/ExpenseAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="53" column="13" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
+              <caret line="21" column="58" selection-start-line="21" selection-start-column="57" selection-end-line="21" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1311#1312#0" expanded="true" />
-                <element signature="e#1359#1360#0" expanded="true" />
-                <element signature="e#2393#2394#0" expanded="true" />
-                <element signature="e#2435#2436#0" expanded="true" />
+                <element signature="e#1326#1327#0" expanded="true" />
+                <element signature="e#1374#1375#0" expanded="true" />
+                <element signature="e#2413#2414#0" expanded="true" />
+                <element signature="e#2455#2456#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -101,11 +93,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="content_main.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="content_main.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_main.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.9411764">
-              <caret line="3" column="63" selection-start-line="3" selection-start-column="63" selection-end-line="3" selection-end-column="63" />
+            <state vertical-scroll-proportion="0.40590405">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -1602,14 +1594,15 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/app_bar_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/expense.xml" />
         <option value="$PROJECT_DIR$/app/src/androidTest/java/com/upversionlab/keugasto/Expense.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/MainScreen/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/Expense.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/MainScreen/MyAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/MainScreen/ExpenseAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/MainScreen/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" />
       </list>
     </option>
   </component>
@@ -1963,7 +1956,7 @@
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30089486" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30089486" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32929516" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2015,8 +2008,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2488#2519#0" expanded="true" />
-            <element signature="e#2521#2553#0" expanded="true" />
+            <element signature="e#2474#2505#0" expanded="true" />
+            <element signature="e#2507#2539#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2046,8 +2039,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2488#2519#0" expanded="true" />
-            <element signature="e#2521#2553#0" expanded="true" />
+            <element signature="e#2474#2505#0" expanded="true" />
+            <element signature="e#2507#2539#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2216,17 +2209,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9411764">
-          <caret line="3" column="63" selection-start-line="3" selection-start-column="63" selection-end-line="3" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-23/android/view/ContextThemeWrapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.375">
@@ -2243,30 +2225,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/MainScreen/MyAdapter.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/MainScreen/ExpenseAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="13" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
+          <caret line="21" column="58" selection-start-line="21" selection-start-column="57" selection-end-line="21" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1311#1312#0" expanded="true" />
-            <element signature="e#1359#1360#0" expanded="true" />
-            <element signature="e#2393#2394#0" expanded="true" />
-            <element signature="e#2435#2436#0" expanded="true" />
+            <element signature="e#1326#1327#0" expanded="true" />
+            <element signature="e#1374#1375#0" expanded="true" />
+            <element signature="e#2413#2414#0" expanded="true" />
+            <element signature="e#2455#2456#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/MainScreen/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8315972">
-          <caret line="32" column="66" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="66" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="56" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2488#2519#0" expanded="true" />
-            <element signature="e#2521#2553#0" expanded="true" />
+            <element signature="e#2474#2505#0" expanded="true" />
+            <element signature="e#2507#2539#0" expanded="true" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40590405">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
   </component>

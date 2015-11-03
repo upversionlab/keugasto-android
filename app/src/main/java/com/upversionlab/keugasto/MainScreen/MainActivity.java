@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity
         ArrayList<Expense> mockedEntries = initializeMockedEntries();
 
         setContentView(R.layout.activity_main);
-        recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+        recyclerView = (RecyclerView) findViewById(R.id.expense_recycler_view);
 
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
@@ -43,8 +43,8 @@ public class MainActivity extends AppCompatActivity
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        // specify an adapter (see also next example)
-        adapter = new MyAdapter(mockedEntries);
+        // specify an adapter
+        adapter = new ExpenseAdapter(mockedEntries);
         recyclerView.setAdapter(adapter);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

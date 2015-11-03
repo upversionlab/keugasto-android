@@ -14,7 +14,7 @@ import java.util.ArrayList;
 /**
  * Created by rborcat on 11/3/2015.
  */
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ViewHolder> {
     private ArrayList<Expense> arrayExpense = new ArrayList<>();
 
     // Provide a reference to the views for each data item
@@ -34,13 +34,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(ArrayList<Expense> arrayExpense) {
+    public ExpenseAdapter(ArrayList<Expense> arrayExpense) {
         this.arrayExpense = arrayExpense;
     }
 
     // Create new views (invoked by the layout manager)
     @Override
-    public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
+    public ExpenseAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
                                                    int viewType) {
         // create a new view
         View v = LayoutInflater.from(parent.getContext())
