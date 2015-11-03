@@ -6,6 +6,23 @@
 
     <string name="action_settings">Settings</string>
 
+    <!-- Main Screen -->
+    <string-array name="main_screen_mock_names">
+        <item>Refeição</item>
+        <item>Games</item>
+        <item>Presentes</item>
+        <item>Ikki</item>
+    </string-array>
+
+    <string-array name="main_screen_mock_values">
+        <item>R$ 180,00</item>
+        <item>R$ 120,00</item>
+        <item>R$ 120,20</item>
+        <item>R$ 30,00</item>
+    </string-array>
+
     <!-- Main Drawer -->
     <string name="main_drawer_add_category">Adicionar Categoria</string>
+    <string name="main_drawer_mensal_balance">Saldo Mensal</string>
+
 </resources>
