@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.upversionlab.keugasto.Expense;
 import com.upversionlab.keugasto.R;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 
 /**
@@ -53,15 +54,25 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ViewHold
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        // - get element from your dataset at this position
-        // - replace the contents of the view with that element
-        holder.expenseName.setText(arrayExpense.get(position).name);
-        holder.expenseValue.setText(arrayExpense.get(position).value);
+        NumberFormat formatter = NumberFormat.getCurrencyInstance();
+        String value = formatter.format(arrayExpense.get(position).value);
+        String name = arrayExpense.get(position).name;
+
+        holder.expenseName.setText(name);
+        holder.expenseValue.setText(value);
     }
 
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
         return arrayExpense.size();
+    }
+
+    // Adds an expense to the array
+    public void addExpense(Expense expense) {
+        this.arrayExpense.add(expense);
+
+        // refresh
+        this.notifyDataSetChanged();
     }
 }

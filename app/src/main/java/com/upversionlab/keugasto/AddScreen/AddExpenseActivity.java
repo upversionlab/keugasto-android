@@ -1,4 +1,4 @@
-package com.upversionlab.keugasto.MainScreen;
+package com.upversionlab.keugasto.AddScreen;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -18,10 +18,9 @@ import com.upversionlab.keugasto.R;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity
+public class AddExpenseActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private RecyclerView recyclerView;
-    private ExpenseAdapter expenseAdapter;
     private RecyclerView.LayoutManager layoutManager;
 
     @Override
@@ -41,15 +40,10 @@ public class MainActivity extends AppCompatActivity
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        // specify an adapter
-        expenseAdapter = new ExpenseAdapter(entries);
-        recyclerView.setAdapter(expenseAdapter);
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new AddButtonClickListener(expenseAdapter, this));
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -103,7 +97,7 @@ public class MainActivity extends AppCompatActivity
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
 
-        }   
+        }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

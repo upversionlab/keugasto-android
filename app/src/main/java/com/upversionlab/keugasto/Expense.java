@@ -5,9 +5,9 @@ package com.upversionlab.keugasto;
  */
 public class Expense {
     public String name;
-    public String value;
+    public float value;
 
-    public Expense(String name, String value) {
+    public Expense(String name, float value) {
         this.name  = name;
         this.value = value;
     }
