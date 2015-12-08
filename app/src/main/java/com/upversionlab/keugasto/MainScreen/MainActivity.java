@@ -1,4 +1,4 @@
-package com.upversionlab.keugasto.MainScreen;
+package com.upversionlab.keugasto.mainscreen;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;

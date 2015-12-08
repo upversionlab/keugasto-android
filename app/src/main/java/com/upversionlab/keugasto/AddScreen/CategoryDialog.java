@@ -1,4 +1,4 @@
-package com.upversionlab.keugasto.AddScreen;
+package com.upversionlab.keugasto.addscreen;
 
 import android.app.Activity;
 import android.app.Dialog;

@@ -1,4 +1,4 @@
-package com.upversionlab.keugasto.MainScreen;
+package com.upversionlab.keugasto.mainscreen;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
