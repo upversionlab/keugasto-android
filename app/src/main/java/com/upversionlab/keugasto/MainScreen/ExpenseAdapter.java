@@ -1,6 +1,10 @@
 package com.upversionlab.keugasto.mainscreen;
 
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.Cursor;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,15 +12,18 @@ import android.widget.TextView;
 
 import com.upversionlab.keugasto.Expense;
 import com.upversionlab.keugasto.R;
+import com.upversionlab.keugasto.model.ExpenseContract.ExpenseColumns;
+import com.upversionlab.keugasto.model.ExpenseDbHelper;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by rborcat on 11/3/2015.
  */
 public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ViewHolder> {
-    private ArrayList<Expense> arrayExpense = new ArrayList<>();
+    private List<Expense> arrayExpense;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -35,8 +42,43 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ViewHold
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public ExpenseAdapter(ArrayList<Expense> arrayExpense) {
-        this.arrayExpense = arrayExpense;
+    public ExpenseAdapter(Context context) {
+        this.arrayExpense = new ArrayList<>();
+        ExpenseDbHelper dbHelper = new ExpenseDbHelper(context);
+
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+
+        // Define a projection that specifies which columns from the database
+        // you will actually use after this query.
+        String[] projection = {
+                ExpenseColumns.COLUMN_NAME_CATEGORY,
+                ExpenseColumns.COLUMN_NAME_VALUE,
+                ExpenseColumns.COLUMN_NAME_DATE,
+                ExpenseColumns.COLUMN_NAME_DESCRIPTION
+        };
+
+        String sortOrder = ExpenseColumns.COLUMN_NAME_DATE + " DESC";
+
+        Cursor cursor = db.query(
+                ExpenseColumns.TABLE_NAME,  // The table to query
+                projection,                 // The columns to return
+                null,                       // The columns for the WHERE clause
+                null,                       // The values for the WHERE clause
+                null,                       // don't group the rows
+                null,                       // don't filter by row groups
+                sortOrder                   // The sort order
+        );
+
+        for(cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
+            String category = cursor.getString(cursor.getColumnIndexOrThrow(ExpenseColumns.COLUMN_NAME_CATEGORY));
+            String value = cursor.getString(cursor.getColumnIndexOrThrow(ExpenseColumns.COLUMN_NAME_VALUE));
+            String date = cursor.getString(cursor.getColumnIndexOrThrow(ExpenseColumns.COLUMN_NAME_DATE));
+            String description = cursor.getString(cursor.getColumnIndexOrThrow(ExpenseColumns.COLUMN_NAME_DESCRIPTION));
+
+            this.arrayExpense.add(new Expense(category, value, date, description));
+        }
+
+        Log.d(ExpenseAdapter.class.getSimpleName(), this.arrayExpense.toString());
     }
 
     // Create new views (invoked by the layout manager)
@@ -54,9 +96,11 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ViewHold
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
+        Expense expense = arrayExpense.get(position);
         NumberFormat formatter = NumberFormat.getCurrencyInstance();
-        String value = formatter.format(arrayExpense.get(position).value);
-        String name = arrayExpense.get(position).name;
+        //String value = formatter.format(arrayExpense.get(position).value);
+        String value = expense.value;
+        String name = expense.category;
 
         holder.expenseName.setText(name);
         holder.expenseValue.setText(value);

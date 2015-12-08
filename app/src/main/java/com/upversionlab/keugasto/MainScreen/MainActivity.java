@@ -28,8 +28,6 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        ArrayList<Expense> entries = new ArrayList<>();
-
         setContentView(R.layout.activity_main);
         recyclerView = (RecyclerView) findViewById(R.id.expense_recycler_view);
 
@@ -42,7 +40,7 @@ public class MainActivity extends AppCompatActivity
         recyclerView.setLayoutManager(layoutManager);
 
         // specify an adapter
-        expenseAdapter = new ExpenseAdapter(entries);
+        expenseAdapter = new ExpenseAdapter(this);
         recyclerView.setAdapter(expenseAdapter);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

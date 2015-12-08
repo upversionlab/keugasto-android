@@ -23,20 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54595e29-b3a0-464e-ac5b-50d8cfffdc9f" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\rborcat\workspace\upversion\keugasto-android\.idea\libraries\appcompat_v7_23_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rborcat\workspace\upversion\keugasto-android\.idea\libraries\cardview_v7_23_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rborcat\workspace\upversion\keugasto-android\.idea\libraries\design_23_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rborcat\workspace\upversion\keugasto-android\.idea\libraries\recyclerview_v7_23_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rborcat\workspace\upversion\keugasto-android\.idea\libraries\support_annotations_23_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\rborcat\workspace\upversion\keugasto-android\.idea\libraries\support_v4_23_1_0.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="C:\Users\rborcat\workspace\upversion\keugasto-android\app\src\main\java\com\upversionlab\keugasto\mainscreen\AddButtonClickListener.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/mainscreen/AddButtonClickListener.java" />
-      <change type="MODIFICATION" beforePath="C:\Users\rborcat\workspace\upversion\keugasto-android\app\src\main\java\com\upversionlab\keugasto\addscreen\AddExpenseActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/addscreen/AddExpenseActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="C:\Users\rborcat\workspace\upversion\keugasto-android\app\src\main\java\com\upversionlab\keugasto\addscreen\CategoryDialog.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/addscreen/CategoryDialog.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/Expense.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/Expense.java" />
       <change type="MODIFICATION" beforePath="C:\Users\rborcat\workspace\upversion\keugasto-android\app\src\main\java\com\upversionlab\keugasto\mainscreen\ExpenseAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/mainscreen/ExpenseAdapter.java" />
       <change type="MODIFICATION" beforePath="C:\Users\rborcat\workspace\upversion\keugasto-android\app\src\main\java\com\upversionlab\keugasto\mainscreen\MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/mainscreen/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/add_expense_activity.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/add_expense_activity.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/app_bar_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/app_bar_main.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Keugasto.iws" />
@@ -69,7 +58,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/mainscreen/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,7 +70,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/addscreen/AddExpenseActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="52" column="68" selection-start-line="52" selection-start-column="68" selection-end-line="52" selection-end-column="68" />
+              <caret line="47" column="30" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1412#2807#0" expanded="true" />
@@ -91,20 +80,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="55" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExpenseContract.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ExpenseContract.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/model/ExpenseContract.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.30555555">
+            <state vertical-scroll-proportion="0.0">
               <caret line="8" column="77" selection-start-line="8" selection-start-column="77" selection-end-line="8" selection-end-column="77" />
               <folding />
             </state>
@@ -125,28 +104,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExpenseAdapter.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ExpenseAdapter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/mainscreen/ExpenseAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="37" column="11" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="11" />
+            <state vertical-scroll-proportion="0.7638889">
+              <caret line="102" column="29" selection-start-line="102" selection-start-column="29" selection-end-line="102" selection-end-column="29" />
               <folding>
-                <element signature="e#1357#1358#0" expanded="true" />
-                <element signature="e#1405#1406#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#4628#4629#0" expanded="true" />
+                <element signature="e#4670#4671#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="add_expense_activity.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/add_expense_activity.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.176471">
-              <caret line="16" column="55" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -1633,7 +1600,6 @@
         <option value="$PROJECT_DIR$/app/src/androidTest/java/com/upversionlab/keugasto/Expense.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/MainScreen/MyAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/Expense.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/MainScreen/ExpenseAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/AddDialog.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/custom_dialog.xml" />
@@ -1653,6 +1619,9 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/model/ExpenseContract.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/addscreen/AddExpenseActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/model/ExpenseDbHelper.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/mainscreen/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/Expense.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/mainscreen/ExpenseAdapter.java" />
       </list>
     </option>
   </component>
@@ -1886,7 +1855,7 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="emulator-5554" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_5_API_23_x86_64" />
     <property name="FullScreen" value="false" />
     <property name="OverrideImplement.combined" value="true" />
@@ -2124,7 +2093,7 @@
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17034522" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32929516" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32929516" sideWeight="0.49801925" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32929516" sideWeight="0.49801925" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33810574" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32929516" sideWeight="0.5019808" order="7" side_tool="true" content_ui="tabs" />
@@ -2450,13 +2419,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/Expense.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/addscreen/CategoryDialog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2575,29 +2537,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/mainscreen/ExpenseAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="11" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="11" />
-          <folding>
-            <element signature="e#1357#1358#0" expanded="true" />
-            <element signature="e#1405#1406#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/addscreen/AddExpenseActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="52" column="68" selection-start-line="52" selection-start-column="68" selection-end-line="52" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1412#2807#0" expanded="true" />
-            <element signature="e#2806#2807#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2614,10 +2553,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/addscreen/AddExpenseActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="30" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1412#2807#0" expanded="true" />
+            <element signature="e#2806#2807#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/Expense.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34375">
+          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/mainscreen/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -2638,9 +2597,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/model/ExpenseContract.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30555555">
+        <state vertical-scroll-proportion="0.0">
           <caret line="8" column="77" selection-start-line="8" selection-start-column="77" selection-end-line="8" selection-end-column="77" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/upversionlab/keugasto/mainscreen/ExpenseAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7638889">
+          <caret line="102" column="29" selection-start-line="102" selection-start-column="29" selection-end-line="102" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4628#4629#0" expanded="true" />
+            <element signature="e#4670#4671#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
