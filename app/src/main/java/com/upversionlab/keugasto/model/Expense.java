@@ -1,4 +1,4 @@
-package com.upversionlab.keugasto;
+package com.upversionlab.keugasto.model;
 
 /**
  * Created by rborcat on 11/3/2015.

@@ -10,7 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.upversionlab.keugasto.Expense;
+import com.upversionlab.keugasto.controller.ExpenseDbController;
+import com.upversionlab.keugasto.model.Expense;
 import com.upversionlab.keugasto.R;
 import com.upversionlab.keugasto.model.ExpenseContract.ExpenseColumns;
 import com.upversionlab.keugasto.model.ExpenseDbHelper;
@@ -44,30 +45,7 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ViewHold
     // Provide a suitable constructor (depends on the kind of dataset)
     public ExpenseAdapter(Context context) {
         this.arrayExpense = new ArrayList<>();
-        ExpenseDbHelper dbHelper = new ExpenseDbHelper(context);
-
-        SQLiteDatabase db = dbHelper.getReadableDatabase();
-
-        // Define a projection that specifies which columns from the database
-        // you will actually use after this query.
-        String[] projection = {
-                ExpenseColumns.COLUMN_NAME_CATEGORY,
-                ExpenseColumns.COLUMN_NAME_VALUE,
-                ExpenseColumns.COLUMN_NAME_DATE,
-                ExpenseColumns.COLUMN_NAME_DESCRIPTION
-        };
-
-        String sortOrder = ExpenseColumns.COLUMN_NAME_DATE + " DESC";
-
-        Cursor cursor = db.query(
-                ExpenseColumns.TABLE_NAME,  // The table to query
-                projection,                 // The columns to return
-                null,                       // The columns for the WHERE clause
-                null,                       // The values for the WHERE clause
-                null,                       // don't group the rows
-                null,                       // don't filter by row groups
-                sortOrder                   // The sort order
-        );
+        Cursor cursor = ExpenseDbController.readValuesFromDb(context);
 
         for(cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
             String category = cursor.getString(cursor.getColumnIndexOrThrow(ExpenseColumns.COLUMN_NAME_CATEGORY));
