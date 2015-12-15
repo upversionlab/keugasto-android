@@ -1,5 +1,6 @@
 package com.upversionlab.keugasto.mainscreen;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.LinearLayoutManager;
@@ -14,12 +15,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.upversionlab.keugasto.R;
+import com.upversionlab.keugasto.model.Expense;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private RecyclerView recyclerView;
     private ExpenseAdapter expenseAdapter;
     private RecyclerView.LayoutManager layoutManager;
+
+    private static final int ADD_EXPENSE_REQUEST_CODE = 1;
+
+    public static final String ADD_EXPENSE_EXPENSE_EXTRA = "ADD_EXPENSE_EXPENSE_EXTRA";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,5 +108,15 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == ADD_EXPENSE_REQUEST_CODE && resultCode == RESULT_OK) {
+            Expense expense = (Expense) data.getSerializableExtra(ADD_EXPENSE_EXPENSE_EXTRA);
+            this.expenseAdapter.addAndUpdate(expense);
+        } else {
+            // err
+        }
     }
 }
