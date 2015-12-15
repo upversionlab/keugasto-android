@@ -1,8 +1,6 @@
 package com.upversionlab.keugasto.mainscreen;
 
 import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.Cursor;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,14 +8,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.upversionlab.keugasto.controller.ExpenseDbController;
 import com.upversionlab.keugasto.model.Expense;
 import com.upversionlab.keugasto.R;
-import com.upversionlab.keugasto.model.ExpenseContract.ExpenseColumns;
 import com.upversionlab.keugasto.model.ExpenseDbHelper;
 
 import java.text.NumberFormat;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -44,17 +39,7 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ViewHold
 
     // Provide a suitable constructor (depends on the kind of dataset)
     public ExpenseAdapter(Context context) {
-        this.arrayExpense = new ArrayList<>();
-        Cursor cursor = ExpenseDbController.readValuesFromDb(context);
-
-        for(cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
-            String category = cursor.getString(cursor.getColumnIndexOrThrow(ExpenseColumns.COLUMN_NAME_CATEGORY));
-            String value = cursor.getString(cursor.getColumnIndexOrThrow(ExpenseColumns.COLUMN_NAME_VALUE));
-            String date = cursor.getString(cursor.getColumnIndexOrThrow(ExpenseColumns.COLUMN_NAME_DATE));
-            String description = cursor.getString(cursor.getColumnIndexOrThrow(ExpenseColumns.COLUMN_NAME_DESCRIPTION));
-
-            this.arrayExpense.add(new Expense(category, value, date, description));
-        }
+        this.arrayExpense = ExpenseDbHelper.readExpense(context);
 
         Log.d(ExpenseAdapter.class.getSimpleName(), this.arrayExpense.toString());
     }

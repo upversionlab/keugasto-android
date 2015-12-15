@@ -8,8 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.upversionlab.keugasto.R;
-
-import com.upversionlab.keugasto.controller.ExpenseDbController;
+import com.upversionlab.keugasto.model.ExpenseDbHelper;
 
 public class AddExpenseActivity extends AppCompatActivity {
     private EditText expenseCategory;
@@ -41,7 +40,7 @@ public class AddExpenseActivity extends AppCompatActivity {
                 String date = activity.expenseDate.getText().toString();
                 String description = activity.expenseDescription.getText().toString();
 
-                long newRowId = ExpenseDbController.insertValuesToDb(activity, category, value, date, description);
+                long newRowId = ExpenseDbHelper.createExpense(activity, category, value, date, description);
             }
         });
     }
