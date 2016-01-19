@@ -19,8 +19,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".addscreen.AddExpenseActivity"
+            android:name=".expense.AddExpenseActivity"
             android:label="@string/add_expense"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".category.AddCategoryActivity"
+            android:label="@string/add_category"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
     </application>

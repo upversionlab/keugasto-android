@@ -1,5 +1,6 @@
-package com.upversionlab.keugasto.addscreen;
+package com.upversionlab.keugasto.expense;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,8 +11,8 @@ import android.widget.EditText;
 
 import com.upversionlab.keugasto.R;
 import com.upversionlab.keugasto.mainscreen.MainActivity;
-import com.upversionlab.keugasto.model.Expense;
-import com.upversionlab.keugasto.model.ExpenseDbHelper;
+import com.upversionlab.keugasto.model.expenseModel.Expense;
+import com.upversionlab.keugasto.model.expenseModel.ExpenseDbHelper;
 
 public class AddExpenseActivity extends AppCompatActivity {
     private EditText expenseCategory;

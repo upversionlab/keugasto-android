@@ -8,9 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.upversionlab.keugasto.model.Expense;
+import com.upversionlab.keugasto.model.expenseModel.Expense;
 import com.upversionlab.keugasto.R;
-import com.upversionlab.keugasto.model.ExpenseDbHelper;
+import com.upversionlab.keugasto.model.expenseModel.ExpenseDbHelper;
 
 import java.text.NumberFormat;
 import java.util.List;

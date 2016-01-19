@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.View;
 
-import com.upversionlab.keugasto.addscreen.AddExpenseActivity;
+import com.upversionlab.keugasto.expense.AddExpenseActivity;
 
 /**
  * Created by rborcat on 11/3/2015.

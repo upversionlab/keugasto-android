@@ -1,4 +1,4 @@
-package com.upversionlab.keugasto.model;
+package com.upversionlab.keugasto.model.expenseModel;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -6,8 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.upversionlab.keugasto.addscreen.AddExpenseActivity;
-import com.upversionlab.keugasto.model.ExpenseContract.ExpenseColumns;
+import com.upversionlab.keugasto.expense.AddExpenseActivity;
+import com.upversionlab.keugasto.model.expenseModel.ExpenseContract.ExpenseColumns;
 
 import java.util.ArrayList;
 

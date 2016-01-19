@@ -1,4 +1,4 @@
-package com.upversionlab.keugasto.model;
+package com.upversionlab.keugasto.model.expenseModel;
 
 import android.provider.BaseColumns;
 
