@@ -7,6 +7,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.upversionlab.keugasto.expense.AddExpenseActivity;
+import com.upversionlab.keugasto.model.categoryModel.Category;
+import com.upversionlab.keugasto.model.categoryModel.CategoryContract;
+import com.upversionlab.keugasto.model.categoryModel.CategoryDbHelper;
 import com.upversionlab.keugasto.model.expenseModel.ExpenseContract.ExpenseColumns;
 
 import java.util.ArrayList;
@@ -22,10 +25,11 @@ public class ExpenseDbHelper extends SQLiteOpenHelper {
     private static final String SQL_CREATE_ENTRIES =
             "CREATE TABLE " + ExpenseColumns.TABLE_NAME + "(" +
                     ExpenseColumns._ID + " INTEGER PRIMARY KEY," +
-                    ExpenseColumns.COLUMN_NAME_CATEGORY + " TEXT," +
+                    ExpenseColumns.COLUMN_NAME_CATEGORY + " INTEGER," +
                     ExpenseColumns.COLUMN_NAME_VALUE + " TEXT," +
                     ExpenseColumns.COLUMN_NAME_DATE + " TEXT," +
-                    ExpenseColumns.COLUMN_NAME_DESCRIPTION + " TEXT" +
+                    ExpenseColumns.COLUMN_NAME_DESCRIPTION + " TEXT," +
+                    "FOREIGN KEY ("+ExpenseColumns.COLUMN_NAME_CATEGORY+") REFERENCES "+ CategoryContract.CategoryColumns.TABLE_NAME+"("+ CategoryContract.CategoryColumns._ID +")" +
             ")";
 
     private static final String SQL_DELETE_ENTRIES =
@@ -44,14 +48,14 @@ public class ExpenseDbHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public static long createExpense(AddExpenseActivity activity, String category, String value, String date, String description) {
+    public static long createExpense(AddExpenseActivity activity, Category category, String value, String date, String description) {
         ExpenseDbHelper dbHelper = new ExpenseDbHelper(activity);
         // Gets the data repository in write mode
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
-        values.put(ExpenseContract.ExpenseColumns.COLUMN_NAME_CATEGORY, category);
+        values.put(ExpenseContract.ExpenseColumns.COLUMN_NAME_CATEGORY, category.id);
         values.put(ExpenseContract.ExpenseColumns.COLUMN_NAME_VALUE, value);
         values.put(ExpenseContract.ExpenseColumns.COLUMN_NAME_DATE, date);
         values.put(ExpenseContract.ExpenseColumns.COLUMN_NAME_DESCRIPTION, description);
@@ -91,11 +95,12 @@ public class ExpenseDbHelper extends SQLiteOpenHelper {
         );
 
         for(cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
-            String category = cursor.getString(cursor.getColumnIndexOrThrow(ExpenseContract.ExpenseColumns.COLUMN_NAME_CATEGORY));
+            Integer categoryId = cursor.getInt(cursor.getColumnIndexOrThrow(ExpenseContract.ExpenseColumns.COLUMN_NAME_CATEGORY));
             String value = cursor.getString(cursor.getColumnIndexOrThrow(ExpenseContract.ExpenseColumns.COLUMN_NAME_VALUE));
             String date = cursor.getString(cursor.getColumnIndexOrThrow(ExpenseContract.ExpenseColumns.COLUMN_NAME_DATE));
             String description = cursor.getString(cursor.getColumnIndexOrThrow(ExpenseContract.ExpenseColumns.COLUMN_NAME_DESCRIPTION));
 
+            Category category = CategoryDbHelper.readCategoryById(context, categoryId);
             arrayExpense.add(new Expense(category, value, date, description));
         }
 

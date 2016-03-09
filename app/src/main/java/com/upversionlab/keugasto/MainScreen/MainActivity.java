@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity
     private ExpenseAdapter expenseAdapter;
     private RecyclerView.LayoutManager layoutManager;
 
-    private static final int ADD_EXPENSE_REQUEST_CODE = 1;
+    public static final int ADD_EXPENSE_REQUEST_CODE = 1;
 
     public static final String ADD_EXPENSE_EXPENSE_EXTRA = "ADD_EXPENSE_EXPENSE_EXTRA";
 

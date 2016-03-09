@@ -28,6 +28,10 @@
             android:label="@string/add_category"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity android:name=".category.ListCategoryActivity"
+            android:label="@string/categories"
+            android:theme="@style/AppTheme.Dialog">
+        </activity>
     </application>
 
 </manifest>

@@ -59,6 +59,47 @@ public class CategoryDbHelper extends SQLiteOpenHelper {
                 values);
     }
 
+    public static Category readCategoryById(Context context, Integer categoryId) {
+        Category category = null;
+        CategoryDbHelper dbHelper = new CategoryDbHelper(context);
+
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+
+        // Define a projection that specifies which columns from the database
+        // you will actually use after this query.
+        String[] projection = {
+                CategoryColumns._ID,
+                CategoryColumns.COLUMN_NAME_NAME,
+                CategoryColumns.COLUMN_NAME_VALUE
+        };
+
+        String whereColumns = CategoryColumns._ID + "= ?";
+
+        String[] whereValues = {
+                categoryId.toString()
+        };
+
+        Cursor cursor = db.query(
+                CategoryColumns.TABLE_NAME, // The table to query
+                projection,                 // The columns to return
+                whereColumns,               // The columns for the WHERE clause
+                whereValues,                // The values for the WHERE clause
+                null,                       // don't group the rows
+                null,                       // don't filter by row groups
+                null                        // The sort order
+        );
+
+        for(cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
+            Integer id = cursor.getInt(cursor.getColumnIndexOrThrow(CategoryColumns._ID));
+            String name = cursor.getString(cursor.getColumnIndexOrThrow(CategoryColumns.COLUMN_NAME_NAME));
+            String value = cursor.getString(cursor.getColumnIndexOrThrow(CategoryColumns.COLUMN_NAME_VALUE));
+
+            category = new Category(id, name, value);
+        }
+
+        return category;
+    }
+
     public static ArrayList readCategory(Context context) {
         ArrayList arrayCategory = new ArrayList<>();
         CategoryDbHelper dbHelper = new CategoryDbHelper(context);
@@ -68,6 +109,7 @@ public class CategoryDbHelper extends SQLiteOpenHelper {
         // Define a projection that specifies which columns from the database
         // you will actually use after this query.
         String[] projection = {
+                CategoryColumns._ID,
                 CategoryColumns.COLUMN_NAME_NAME,
                 CategoryColumns.COLUMN_NAME_VALUE
         };
@@ -83,10 +125,11 @@ public class CategoryDbHelper extends SQLiteOpenHelper {
         );
 
         for(cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
+            Integer id = cursor.getInt(cursor.getColumnIndexOrThrow(CategoryColumns._ID));
             String name = cursor.getString(cursor.getColumnIndexOrThrow(CategoryColumns.COLUMN_NAME_NAME));
             String value = cursor.getString(cursor.getColumnIndexOrThrow(CategoryColumns.COLUMN_NAME_VALUE));
 
-            arrayCategory.add(new Category(name, value));
+            arrayCategory.add(new Category(id, name, value));
         }
 
         return arrayCategory;

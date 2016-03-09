@@ -10,7 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.upversionlab.keugasto.R;
+import com.upversionlab.keugasto.category.ListCategoryActivity;
 import com.upversionlab.keugasto.mainscreen.MainActivity;
+import com.upversionlab.keugasto.model.categoryModel.Category;
 import com.upversionlab.keugasto.model.expenseModel.Expense;
 import com.upversionlab.keugasto.model.expenseModel.ExpenseDbHelper;
 
@@ -20,6 +22,9 @@ public class AddExpenseActivity extends AppCompatActivity {
     private EditText expenseDate;
     private EditText expenseDescription;
     private Button addButton;
+    private Category selectedCategory = null;
+    public static final int CATEGORY_LIST_DIALOG_REQUEST_CODE = 1;
+    public static final String CATEGORY_LIST_DIALOG_CATEGORY_EXTRA = "CATEGORY_LIST_DIALOG_CATEGORY_EXTRA";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +35,14 @@ public class AddExpenseActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         expenseCategory = (EditText) findViewById(R.id.expense_category);
+        expenseCategory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AddExpenseActivity activity = AddExpenseActivity.this;
+                Intent intent = new Intent(activity, ListCategoryActivity.class);
+                activity.startActivityForResult(intent, CATEGORY_LIST_DIALOG_REQUEST_CODE);
+            }
+        });
         expenseValue = (EditText) findViewById(R.id.expense_value);
         expenseDate = (EditText) findViewById(R.id.expense_date);
         expenseDescription = (EditText) findViewById(R.id.expense_description);
@@ -39,15 +52,14 @@ public class AddExpenseActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 AddExpenseActivity activity = AddExpenseActivity.this;
-                String category = activity.expenseCategory.getText().toString();
                 String value = activity.expenseValue.getText().toString();
                 String date = activity.expenseDate.getText().toString();
                 String description = activity.expenseDescription.getText().toString();
 
-                long rowId = ExpenseDbHelper.createExpense(activity, category, value, date, description);
+                long rowId = ExpenseDbHelper.createExpense(activity, selectedCategory, value, date, description);
                 // the row ID of the newly inserted row, or -1 if an error occurred
                 if (rowId != -1) {
-                    Expense expense = new Expense(category, value, date, description);
+                    Expense expense = new Expense(selectedCategory, value, date, description);
                     Intent intentResult = new Intent();
                     intentResult.putExtra(MainActivity.ADD_EXPENSE_EXPENSE_EXTRA, expense);
                     activity.setResult(RESULT_OK, intentResult);
@@ -58,5 +70,16 @@ public class AddExpenseActivity extends AppCompatActivity {
                 activity.finish();
             }
         });
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == CATEGORY_LIST_DIALOG_REQUEST_CODE && resultCode == RESULT_OK) {
+            Category category = (Category) data.getSerializableExtra(CATEGORY_LIST_DIALOG_CATEGORY_EXTRA);
+            selectedCategory = category;
+            expenseCategory.setText(selectedCategory.name);
+        } else {
+            // err
+        }
     }
 }

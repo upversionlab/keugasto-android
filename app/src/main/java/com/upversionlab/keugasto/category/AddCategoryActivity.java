@@ -40,7 +40,7 @@ public class AddCategoryActivity extends AppCompatActivity {
                 long rowId = CategoryDbHelper.createCategory(activity, name, value);
                 // the row ID of the newly inserted row, or -1 if an error occurred
                 if (rowId != -1) {
-                    Category category = new Category(name, value);
+                    Category category = new Category((int) rowId, name, value);
                     Intent intentResult = new Intent();
                     // Change the put extra to something that will come from AddExpenseActivity
                     intentResult.putExtra(MainActivity.ADD_EXPENSE_EXPENSE_EXTRA, category);

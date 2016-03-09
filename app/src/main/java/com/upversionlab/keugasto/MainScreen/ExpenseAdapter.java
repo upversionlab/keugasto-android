@@ -47,7 +47,7 @@ public class ExpenseAdapter extends RecyclerView.Adapter<ExpenseAdapter.ViewHold
         NumberFormat formatter = NumberFormat.getCurrencyInstance();
         //String value = formatter.format(arrayExpense.get(position).value);
         String value = expense.value;
-        String name = expense.category;
+        String name = expense.category.name;
 
         holder.expenseName.setText(name);
         holder.expenseValue.setText(value);
