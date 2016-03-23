@@ -14,6 +14,7 @@ import com.upversionlab.keugasto.model.categoryModel.Category;
 import com.upversionlab.keugasto.model.categoryModel.CategoryDbHelper;
 
 public class AddCategoryActivity extends AppCompatActivity {
+    public final static String ADD_CATEGORY_CATEGORY_EXTRA = "ADD_CATEGORY_CATEGORY_EXTRA";
     private EditText categoryName;
     private EditText categoryValue;
     private Button addButton;
@@ -43,7 +44,7 @@ public class AddCategoryActivity extends AppCompatActivity {
                     Category category = new Category((int) rowId, name, value);
                     Intent intentResult = new Intent();
                     // Change the put extra to something that will come from AddExpenseActivity
-                    intentResult.putExtra(MainActivity.ADD_EXPENSE_EXPENSE_EXTRA, category);
+                    intentResult.putExtra(AddCategoryActivity.ADD_CATEGORY_CATEGORY_EXTRA, category);
                     activity.setResult(RESULT_OK, intentResult);
                 } else {
                     activity.setResult(RESULT_CANCELED);
