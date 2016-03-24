@@ -9,11 +9,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.upversionlab.keugasto.R;
-import com.upversionlab.keugasto.expense.AddExpenseActivity;
 import com.upversionlab.keugasto.model.categoryModel.Category;
 
 public class ListCategoryActivity extends AppCompatActivity {
     private final static int ADD_CATEGORY_REQUEST_CODE = 1;
+    public static final String CATEGORY_EXTRA = "CATEGORY_EXTRA";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +60,7 @@ public class ListCategoryActivity extends AppCompatActivity {
 
     private void pickCategory(Category category){
         Intent intentResult = new Intent();
-        intentResult.putExtra(AddExpenseActivity.CATEGORY_LIST_DIALOG_CATEGORY_EXTRA, category);
+        intentResult.putExtra(CATEGORY_EXTRA, category);
         setResult(RESULT_OK, intentResult);
         finish();
     }

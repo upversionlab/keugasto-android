@@ -24,6 +24,7 @@
     <!-- Add Category -->
     <string name="add_category_name_label">Nome</string>
     <string name="add_category_limit">Limite</string>
+    <string name="title_activity_date_picker">Data</string>
 
 
 </resources>

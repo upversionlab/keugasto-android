@@ -12,13 +12,17 @@ import com.upversionlab.keugasto.model.categoryModel.CategoryContract;
 import com.upversionlab.keugasto.model.categoryModel.CategoryDbHelper;
 import com.upversionlab.keugasto.model.expenseModel.ExpenseContract.ExpenseColumns;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by rborcat on 12/8/2015.
  */
 public class ExpenseDbHelper extends SQLiteOpenHelper {
     // If you change the database schema, you must increment the database version.
+    private static final String DATE_MASK = "dd/MM/yyyy";
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "ExpenseDb.db";
 
@@ -48,16 +52,17 @@ public class ExpenseDbHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public static long createExpense(AddExpenseActivity activity, Category category, String value, String date, String description) {
+    public static long createExpense(AddExpenseActivity activity, Category category, String value, Date date, String description) {
         ExpenseDbHelper dbHelper = new ExpenseDbHelper(activity);
         // Gets the data repository in write mode
         SQLiteDatabase db = dbHelper.getWritableDatabase();
+        SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_MASK);
 
         // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
         values.put(ExpenseContract.ExpenseColumns.COLUMN_NAME_CATEGORY, category.id);
         values.put(ExpenseContract.ExpenseColumns.COLUMN_NAME_VALUE, value);
-        values.put(ExpenseContract.ExpenseColumns.COLUMN_NAME_DATE, date);
+        values.put(ExpenseContract.ExpenseColumns.COLUMN_NAME_DATE, dateFormat.format(date));
         values.put(ExpenseContract.ExpenseColumns.COLUMN_NAME_DESCRIPTION, description);
 
         // Insert the new row, returning the primary key value of the new row
@@ -97,9 +102,16 @@ public class ExpenseDbHelper extends SQLiteOpenHelper {
         for(cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {
             Integer categoryId = cursor.getInt(cursor.getColumnIndexOrThrow(ExpenseContract.ExpenseColumns.COLUMN_NAME_CATEGORY));
             String value = cursor.getString(cursor.getColumnIndexOrThrow(ExpenseContract.ExpenseColumns.COLUMN_NAME_VALUE));
-            String date = cursor.getString(cursor.getColumnIndexOrThrow(ExpenseContract.ExpenseColumns.COLUMN_NAME_DATE));
+            String dateString = cursor.getString(cursor.getColumnIndexOrThrow(ExpenseContract.ExpenseColumns.COLUMN_NAME_DATE));
             String description = cursor.getString(cursor.getColumnIndexOrThrow(ExpenseContract.ExpenseColumns.COLUMN_NAME_DESCRIPTION));
 
+            SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_MASK);
+            Date date = null;
+            try {
+                date = dateFormat.parse(dateString);
+            } catch (ParseException e) {
+                // never happens
+            }
             Category category = CategoryDbHelper.readCategoryById(context, categoryId);
             arrayExpense.add(new Expense(category, value, date, description));
         }
