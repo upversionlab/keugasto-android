@@ -89,7 +89,8 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
             android:singleLine="true"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:focusable="false"/>
     </RelativeLayout>
 
     <RelativeLayout
