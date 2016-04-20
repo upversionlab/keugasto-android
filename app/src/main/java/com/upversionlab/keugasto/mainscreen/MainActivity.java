@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.upversionlab.keugasto.R;
+import com.upversionlab.keugasto.balance.BalanceActivity;
 import com.upversionlab.keugasto.category.AddCategoryActivity;
 import com.upversionlab.keugasto.model.expenseModel.Expense;
 
@@ -95,7 +96,6 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
@@ -105,7 +105,8 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(this, AddCategoryActivity.class);
             this.startActivity(intent);
         } else if (id == R.id.nav_balance) {
-
+            Intent intent = new Intent(this, BalanceActivity.class);
+            this.startActivity(intent);
         }   
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

@@ -10,6 +10,7 @@ import com.upversionlab.keugasto.category.AddCategoryActivity;
 import com.upversionlab.keugasto.model.categoryModel.CategoryContract.CategoryColumns;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by rborcat on 01/12/2016.
@@ -100,7 +101,7 @@ public class CategoryDbHelper extends SQLiteOpenHelper {
         return category;
     }
 
-    public static ArrayList readCategory(Context context) {
+    public static List<Category> readCategory(Context context) {
         ArrayList arrayCategory = new ArrayList<>();
         CategoryDbHelper dbHelper = new CategoryDbHelper(context);
 

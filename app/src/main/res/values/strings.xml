@@ -2,6 +2,7 @@
     <string name="app_name">Keugasto</string>
     <string name="add_expense">Adicionar Gasto</string>
     <string name="add_category">Adicionar Categoria</string>
+    <string name="balance">Saldo</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -10,7 +11,7 @@
 
     <!-- Main Drawer -->
     <string name="main_drawer_add_category">Adicionar Categoria</string>
-    <string name="main_drawer_mensal_balance">Saldo Mensal</string>
+    <string name="main_drawer_mensal_balance">Saldo</string>
 
     <!-- Add Expense -->
     <string name="add_expense_category_label">Categoria</string>
@@ -25,6 +26,5 @@
     <string name="add_category_name_label">Nome</string>
     <string name="add_category_limit">Limite</string>
     <string name="title_activity_date_picker">Data</string>
-
 
 </resources>

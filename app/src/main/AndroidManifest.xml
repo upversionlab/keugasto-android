@@ -21,15 +21,19 @@
         <activity
             android:name=".expense.AddExpenseActivity"
             android:label="@string/add_expense"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".category.AddCategoryActivity"
             android:label="@string/add_category"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".category.ListCategoryActivity"
             android:label="@string/categories"
-            android:theme="@style/AppTheme.Dialog"></activity>
+            android:theme="@style/AppTheme.Dialog" />
+        <activity
+            android:name=".balance.BalanceActivity"
+            android:label="@string/balance"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

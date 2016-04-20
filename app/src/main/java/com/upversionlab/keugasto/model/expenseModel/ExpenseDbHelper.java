@@ -16,6 +16,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by rborcat on 12/8/2015.
@@ -72,7 +73,7 @@ public class ExpenseDbHelper extends SQLiteOpenHelper {
                 values);
     }
 
-    public static ArrayList readExpense(Context context) {
+    public static List<Expense> readExpense(Context context) {
         ArrayList arrayExpense = new ArrayList<>();
         ExpenseDbHelper dbHelper = new ExpenseDbHelper(context);
 
